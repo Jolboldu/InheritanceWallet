@@ -11,7 +11,7 @@ const web3 = new Web3(new Web3.providers.HttpProvider(endpoint))
 
 const withdraw = async() => {
     console.log('starting withdrawing')
-    
+
     const sepoliaContract = new web3.eth.Contract(contractABI, contractAddress);
     const baseGasPrice = await web3.eth.getGasPrice();
     const gasLimit = await sepoliaContract.methods.withdraw(0).estimateGas({ from: walletAddress });

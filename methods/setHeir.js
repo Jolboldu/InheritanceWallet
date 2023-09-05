@@ -12,7 +12,7 @@ const web3 = new Web3(new Web3.providers.HttpProvider(endpoint))
 
 const setHeir = async() => {
     console.log('starting setting heir')
-    
+
     const sepoliaContract = new web3.eth.Contract(contractABI, contractAddress);
     const baseGasPrice = await web3.eth.getGasPrice();
     const gasLimit = await sepoliaContract.methods.setHeir(heirWalletAddress).estimateGas({ from: ownerWalletAddress });
